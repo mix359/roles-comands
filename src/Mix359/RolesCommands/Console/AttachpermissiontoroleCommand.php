@@ -1,6 +1,6 @@
 <?php namespace Mix359\RolesCommands\Console;
 
-use Bican\Roles\Models\Permission;
+use Ultraware\Roles\Models\Permission;
 use Illuminate\Console\Command;
 
 class AttachpermissiontoroleCommand extends Command

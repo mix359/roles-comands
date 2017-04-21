@@ -1,7 +1,7 @@
 <?php namespace Mix359\RolesCommands\Console;
 
 use Illuminate\Console\Command;
-use Bican\Roles\Models\Role;
+use Ultraware\Roles\Models\Role;
 
 class DeleteroleCommand extends Command
 {

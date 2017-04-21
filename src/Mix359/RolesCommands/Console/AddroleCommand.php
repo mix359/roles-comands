@@ -1,6 +1,6 @@
 <?php namespace Mix359\RolesCommands\Console;
 
-use Bican\Roles\Models\Role;
+use Ultraware\Roles\Models\Role;
 use Illuminate\Console\Command;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Str;

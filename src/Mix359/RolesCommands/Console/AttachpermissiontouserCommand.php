@@ -37,9 +37,11 @@ class AttachpermissiontouserCommand extends Command
 	public function handle()
 	{
 		$permissionModel = config('roles.models.permission');
-		$userModel = config('auth.model');
+		$defaultGuard = config('auth.defaults.guard');
+		$defaultUserProvider = config('auth.guards.'.$defaultGuard.'.provider');
+		$userModel = config('auth.providers.'.$defaultUserProvider.'.model');
 
-		$user = $userModel::find($this->argument("userId"));
+        $user = $userModel::find($this->argument("userId"));
 		if(!$user instanceof $userModel) {
 			$this->error("User with id specified not found.");
 			return;

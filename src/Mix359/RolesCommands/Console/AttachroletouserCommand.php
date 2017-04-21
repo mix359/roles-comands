@@ -37,7 +37,9 @@ class AttachroletouserCommand extends Command
 	public function handle()
 	{
 		$roleModel = config('roles.models.role');
-		$userModel = config('auth.model');
+        $defaultGuard = config('auth.defaults.guard');
+        $defaultUserProvider = config('auth.guards.'.$defaultGuard.'.provider');
+        $userModel = config('auth.providers.'.$defaultUserProvider.'.model');
 
 		$user = $userModel::find($this->argument("userId"));
 		if(!$user instanceof $userModel) {
